@@ -9,7 +9,7 @@
 
         <!--  Rolling file appender  -->
         <RollingFile name="RollingFile"
-                     fileName="/var/log/home_active_manager/weather_service/log.txt"
+                     fileName="./log/log.txt"
                      filePattern="/var/log/home_active_manager/weather_service/log-%d{MM-dd-yyyy}-%i.txt.gz">
             <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%-5p] [%c{1}:%L] - %m%n"/>
             <Policies>
@@ -33,7 +33,7 @@
 
         <Root level="trace">
             <AppenderRef ref="Console" level="debug"/>
-            <!--<AppenderRef ref="RollingFile" level="trace"/>-->
+            <AppenderRef ref="RollingFile" level="info"/>
         </Root>
     </Loggers>
 </Configuration>

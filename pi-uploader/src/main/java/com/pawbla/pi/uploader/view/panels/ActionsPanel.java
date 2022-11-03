@@ -9,8 +9,6 @@ import javax.swing.*;
 public class ActionsPanel extends JPanel {
 
     public ActionsPanel(UpdateAppButton updateAppButton) {
-        //TODO Checkbox for remove tmp folder
-        //TODO Checkbox for reboot RPI
         add(updateAppButton);
     }
 }

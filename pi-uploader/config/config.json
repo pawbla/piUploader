@@ -1,0 +1,17 @@
+{
+  "start_apps": {
+    "source": "E:\\Projects\\HomeActiveManager\\home-active-manager-parent\\release\\",
+    "destination": "/usr/local/bin/test/homeActiveManager/",
+    "file": "start_apps.sh"
+  },
+  "weather-service-module": {
+    "source": "E:\\Projects\\HomeActiveManager\\home-active-manager-parent\\release\\weather-service-module\\",
+    "destination": "/usr/local/bin/test/homeActiveManager/weather-service-module/"
+  },
+  "weather_app_jar": {
+    "source": "E:\\Projects\\HomeActiveManager\\home-active-manager-parent\\release\\weather-service-module\\",
+    "file": "weather-service-module-1.0-SNAPSHOT.jar",
+    "destination": "/usr/local/bin/test/homeActiveManager/weather-service-module/"
+  }
+}
+

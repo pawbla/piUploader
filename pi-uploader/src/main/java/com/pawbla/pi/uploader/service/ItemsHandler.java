@@ -2,11 +2,14 @@ package com.pawbla.pi.uploader.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pawbla.pi.uploader.PiUploaderMain;
 import com.pawbla.pi.uploader.model.ItemsList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import java.io.File;
 
 @Component
 public class ItemsHandler {
@@ -18,12 +21,13 @@ public class ItemsHandler {
     private final ObjectMapper mapper;
 
     public ItemsHandler(@Value("${items.config.path}") String appConfigPath, FileReaderService readerService) {
-        this.appConfigPath = appConfigPath;
+        this.appConfigPath = new File(".").getAbsolutePath().concat(appConfigPath);
         this.readerService = readerService;
         this.mapper = new ObjectMapper();
     }
 
     public void loadConfiguration() {
+        LOG.info("Load configuration from json file");
         String configStr = readerService.readFile(appConfigPath);
         try {
             itemsList = mapper.readValue(configStr, ItemsList.class);

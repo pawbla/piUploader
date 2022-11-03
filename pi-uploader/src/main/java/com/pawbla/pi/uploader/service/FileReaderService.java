@@ -17,6 +17,7 @@ public class FileReaderService {
     StringBuilder stringBuilder = new StringBuilder();
 
     public String readFile(String pathToFile)  {
+        LOG.info("Read file {}", pathToFile);
         try (BufferedReader reader = new BufferedReader(new FileReader(pathToFile))) {
             while ((str = reader.readLine()) != null) {
                 stringBuilder.append(str).append("\n");
